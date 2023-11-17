@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Movie Recommender</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- FAVICON -->
+		<link rel='icon' type='image/x-icon' href='../static/images/movie-logo.png'>
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+
+			<div class="inner">
+				<form action="{{url_for('home')}}", method="POST">
+
+					<h3>TF-IDF Movie Recommender</h3>
+					<p class="heading">Aplicación Web que utliza TF-IDF y la Similitud de Coseno para Recomendarle 5 
+						Películas al Usuario, dado una Película que le haya Gustado.</p>
+
+					
+					<!-- PELICULA -->
+					<p class="form-group" id="drop_form" >Recomendaciones para {{peli_usuario}}</p>
+					
+					<!--RECOMENDACIONES-->
+					<ol class="ol-control">
+
+						<!--Loop para poner pelis recomendadas-->
+						{% for el in pelis_recomendadas %}
+
+							<li class="ol-num"> {{ el }} </li>
+
+						{% endfor %}
+						
+					</ol>
+					
+
+
+					<!-- BUTTON TO SUBMIT FORM AND PREDICT PRICE -->
+					<button type="submit" id="home">Volver a Inicio
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+
+				
+				<br>
+
+			 <!-- CORP -->
+			 <div class="corp"><h2>&copy; 2023 Enrique Barón Gómez</h2></div>
+
+			</div>
+		</div>
+
+
+
+
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
